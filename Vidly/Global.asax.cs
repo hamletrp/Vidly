@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,6 +15,7 @@ namespace Vidly
     {
         protected void Application_Start()
         {
+	// test CI Pipeline
             Mapper.Initialize(c => c.AddProfile<MappingProfile>());
 
             GlobalConfiguration.Configure(WebApiConfig.Register);
