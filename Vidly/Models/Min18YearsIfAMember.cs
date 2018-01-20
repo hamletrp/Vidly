@@ -12,8 +12,9 @@ namespace Vidly.Models
     {
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
-            var customer = (Customer)validationContext.ObjectInstance; // we need to cast the customer object
+            //var customer = (Customer)validationContext.ObjectInstance; // we need to cast the customer object
 
+            /*
             if (customer.MembershipTypeId == MembershipType.Unknown ||
                 customer.MembershipTypeId == MembershipType.PayAsYouGo)
                 return ValidationResult.Success;
@@ -22,10 +23,16 @@ namespace Vidly.Models
                 return new ValidationResult("BirthDate is Required.");
 
             var age = DateTime.Today.Year - customer.BirthDate.Value.Year;
+            */
 
-            return (age >= 18) 
+            return (int.Parse(value.ToString()) >= 18) 
                 ? ValidationResult.Success 
                 : new ValidationResult("Customer should be at least 18 years old."); 
+        }
+
+        public ValidationResult Valid(object value, ValidationContext validationContext)
+        {
+            return IsValid(value, validationContext);
         }
     }
 }
