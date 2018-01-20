@@ -117,6 +117,5 @@ C:\Users\Raineri Bueno\Documents\ProjectRepositories\Vidly\Vidly\bin\AutoMapper.
 C:\Users\Raineri Bueno\Documents\ProjectRepositories\Vidly\Vidly\bin\AutoMapper.xml
 C:\Users\Raineri Bueno\Documents\ProjectRepositories\Vidly\Vidly\obj\Debug\Vidly.Migrations.SeedUsers.resources
 C:\Users\Raineri Bueno\Documents\ProjectRepositories\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddDrivingLicenseToApplicationUsers.resources
-C:\Users\Raineri Bueno\Documents\ProjectRepositories\Vidly\Vidly\obj\Debug\Vidly.csprojResolveAssemblyReference.cache
 C:\Users\Raineri Bueno\Documents\ProjectRepositories\Vidly\Vidly\obj\Debug\Vidly.csproj.CoreCompileInputs.cache
 C:\Users\Raineri Bueno\Documents\ProjectRepositories\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddPhoneToApplicationUsers.resources
