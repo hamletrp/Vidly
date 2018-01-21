@@ -18,7 +18,7 @@ namespace Vidly_Tests
             //Act
             var result = IsMember.Valid(18, null);
 
-            //Assert
+            //Assertion
             Assert.AreEqual(ValidationResult.Success, result);
 
         }
