@@ -9,7 +9,7 @@ namespace Vidly
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
-            // Test MSTest plugin integration
+            // Test MSTest plugin integration - Test MSTest plugin integration
         }
     }
 }
