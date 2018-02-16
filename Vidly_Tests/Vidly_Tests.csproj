@@ -58,9 +58,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="..\Vidly\bin\Vidly.dll">
+    <ProjectReference Include="..\Vidly\Vidly.csproj">
+      <Project>{994fdabc-ec92-49ba-9d27-b93dc2216369}</Project>
       <Name>Vidly</Name>
-    </Reference>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
