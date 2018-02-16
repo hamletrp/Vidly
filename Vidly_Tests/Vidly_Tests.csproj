@@ -58,7 +58,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Vidly\Vidly.csproj">
+    <ProjectReference Include="..\Vidly\bin\Vidly.dll">
       <Project>{994fdabc-ec92-49ba-9d27-b93dc2216369}</Project>
       <Name>Vidly</Name>
     </ProjectReference>
