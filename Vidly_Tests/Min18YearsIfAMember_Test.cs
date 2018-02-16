@@ -31,10 +31,9 @@ namespace Vidly_Tests
 
             //Act
             var result = IsMember.Valid(17, null);
-            failing the build
 
             //Assert
-            Assert.AreEqual("Customer should be at least 18 years old.", result.ErrorMessage);
+            Assert.AreEqual("Customer should be at least 18 years old.-", result.ErrorMessage);
 
             // Hamlet: Adding change to test autobuild trigger 2
         }
