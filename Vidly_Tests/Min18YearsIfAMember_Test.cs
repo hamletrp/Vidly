@@ -30,10 +30,10 @@ namespace Vidly_Tests
             Min18YearsIfAMember IsMember = new Min18YearsIfAMember();
 
             //Act
-            var result = IsMember.Valid(17, null);
+            var result = IsMember.Valid(18, null);
 
             //Assert
-            Assert.AreEqual("Customer should be at least 18 years old.-", result.ErrorMessage);
+            Assert.AreEqual("Customer should be at least 18 years old.", result.ErrorMessage);
 
             // Hamlet: Adding change to test autobuild trigger 2
         }
