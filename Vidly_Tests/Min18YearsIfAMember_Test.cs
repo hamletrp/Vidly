@@ -34,6 +34,8 @@ namespace Vidly_Tests
 
             //Assert
             Assert.AreEqual("Customer should be at least 18 years old.", result.ErrorMessage);
+
+            // Hamlet: Adding change to test autobuild trigger
         }
     }
 }
