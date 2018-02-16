@@ -16,7 +16,7 @@ namespace Vidly_Tests
             Min18YearsIfAMember IsMember = new Min18YearsIfAMember();
 
             //Act
-            var result = IsMember.Valid(17, null);
+            var result = IsMember.Valid(18, null);
 
             //Assertion
             Assert.AreEqual(ValidationResult.Success, result);
