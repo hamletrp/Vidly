@@ -17,7 +17,7 @@ namespace Vidly
         {
 	// test CI Pipeline
 //new testing CI pipeline
-            Mapper.Initialize(c => c.AddProfile<MappingProfile-->());
+            Mapper.Initialize(c => c.AddProfile<MappingProfile>());
 
             GlobalConfiguration.Configure(WebApiConfig.Register);
             AreaRegistration.RegisterAllAreas();
