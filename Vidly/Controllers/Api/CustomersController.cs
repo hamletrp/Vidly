@@ -21,10 +21,15 @@ namespace Vidly.Controllers.Api
         }
 
         // GET /Api/Customers
-        public IHttpActionResult GetCustomers()
+        public IHttpActionResult GetCustomers(string query = null)
         {
-            var customerDtos = _context.Customers
-                .Include( c => c.MembershipType)
+            var customerQuery = _context.Customers
+                .Include(c => c.MembershipType);
+
+            if (!String.IsNullOrWhiteSpace(query)) //Improving Typeahead
+                customerQuery = customerQuery.Where(c => c.Name.Contains(query));
+                
+            var customerDtos = customerQuery
                 .ToList()
                 .Select(Mapper.Map<Customer, CustomerDto>); //here we need to delegate a reference to the customerdto method using autoMapper
 

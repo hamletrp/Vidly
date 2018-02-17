@@ -168,3 +168,4 @@ C:\Users\Raineri Bueno\Documents\ProjectRepositories\Vidly\Vidly_Tests\obj\Debug
 C:\Users\Raineri Bueno\Documents\ProjectRepositories\Vidly\Vidly_Tests\obj\Debug\Vidly_Tests.csproj.CoreCompileInputs.cache
 C:\Users\Raineri Bueno\Documents\ProjectRepositories\Vidly\Vidly_Tests\obj\Debug\Vidly_Tests.dll
 C:\Users\Raineri Bueno\Documents\ProjectRepositories\Vidly\Vidly_Tests\obj\Debug\Vidly_Tests.pdb
+C:\Users\Raineri Bueno\Documents\ProjectRepositories\Vidly\Vidly_Tests\bin\Debug\Vidly_Tests.dll.config

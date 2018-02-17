@@ -9,6 +9,7 @@ namespace Vidly.Controllers
     [AllowAnonymous]
     public class HomeController : Controller
     {
+        //[OutputCache (Duration = 30)]
         public ActionResult Index()
         {
             return View();
