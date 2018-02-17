@@ -48,14 +48,7 @@
             }
         });
 
-        var movies = new Bloodhound({
-            datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
-            queryTokenizer: Bloodhound.tokenizers.obj.whitespace,
-            remote: {
-                url: '/api/movies?query=%QUERY',
-                wildcard: '%QUERY'
-            }
-        });
+     
 
         $('#customer').typeahead({
             minLength: 2,
@@ -66,6 +59,15 @@
                  source: customers
             }).on("typeahead:select", function (e, customer) {
                 vm.customerId = customer.Id;
+        });
+
+        var movies = new Bloodhound({
+            datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+            queryTokenizer: Bloodhound.tokenizers.obj.whitespace,
+            remote: {
+                url: '/api/movies?query=%QUERY',
+                wildcard: '%QUERY'
+            }
         });
 
         $('#movie').typeahead({
@@ -85,16 +87,17 @@
 
         $('#newRental').submit(function (e) {
             e.preventDefault();
+
             $.ajax({
                 url: "/api/NewRentals",
                 method: "POST",
                 data: vm
             })
                 .done(function () {
-                    console.log("DONE")
+                    toastr.success("Rentals successfully recorded.");
                 })
-                .fail(function (e) {
-                    console.log(e)
+                .fail(function () {
+                    toastr.error("Something Unexpected Happened.");
                 });
         });
     });
