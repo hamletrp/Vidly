@@ -8,14 +8,14 @@
     <div class="form-group">
         <label>Customer</label>
         <div class="tt-container">
-            <input id="customer" type="text" value="" class="form-control" />
+            <input id="customer" name="customer" data-rule-validCustomer="true" required type="text" value="" class="form-control" />
         </div>
     </div>
-
+        
     <div class="form-group">
         <label>Movie</label>
         <div class="tt-container">
-            <input id="movie" type="text" value="" class="form-control" />
+            <input id="movie" name="movie" data-rule-validMovie="true" required type="text" value="" class="form-control" />
         </div>
     </div>
 
@@ -30,11 +30,12 @@
 
 @section scripts
 {
+    @Scripts.Render("~/bundles/jqueryval")
 <script>
     $(document).ready(function () {
 
         var vm = {
-            customerId : "",
+           customerId : " ",
             moviesIds: []
         };
 
@@ -85,20 +86,43 @@
                 vm.moviesIds.push(movie.Id);
             });
 
-        $('#newRental').submit(function (e) {
-            e.preventDefault();
+        $.validator.addMethod("validMovie", function () {
+            return vm.moviesIds.length > 0;
+        }, "Must select at least one valid movie");
 
-            $.ajax({
-                url: "/api/NewRentals",
-                method: "POST",
-                data: vm
-            })
-                .done(function () {
-                    toastr.success("Rentals successfully recorded.");
+        $.validator.addMethod("validCustomer", function () {
+            return vm.customerId && vm.customerId !== 0;
+        }, "Please select a valid customer." );
+
+
+        var validator = $("#newRental").validate({
+            submitHandler: function () {
+                $.ajax({
+                    url: "/api/NewRentals",
+                    method: "POST",
+                    data: vm
                 })
-                .fail(function () {
-                    toastr.error("Something Unexpected Happened.");
-                });
+                    .done(function () {
+                        toastr.success("Rentals successfully recorded.");
+
+                        //used to clear the form once submitted is successed.
+                        $("#customer").typeahead("val", "");
+                        $("#movie").typeahead("val", "");
+                        $("#movie").empty();
+
+                        // reset our vm (ViewModel)
+                        vm = { moviesIds: [] };
+
+                        //reset the state of the form in terms of its validation.
+                        validator.resetForm();
+
+                    })
+                    .fail(function () {
+                        toastr.error("Something Unexpected Happened.");
+                    });
+
+                return false
+            }
         });
     });
     </script>
