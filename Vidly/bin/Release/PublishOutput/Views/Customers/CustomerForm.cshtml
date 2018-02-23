@@ -1,0 +1,48 @@
+﻿@model Vidly.ViewModels.CustomerFormViewModel
+@{
+    ViewBag.Title = Model.Title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Title</h2>
+
+@using(@Html.BeginForm("Save", "Customers"))
+{
+    @Html.ValidationSummary(); @*take all summary in the page and put it together in the head*@
+    <div class="form-group">
+        @Html.LabelFor(m => m.Customer.Name)
+        @Html.TextBoxFor(m => m.Customer.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Customer.Name)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Customer.LastName)
+        @Html.TextBoxFor(m => m.Customer.LastName, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Customer.MembershipTypeId)
+        @Html.DropDownListFor(m => m.Customer.MembershipTypeId, new SelectList(Model.MembershipType, "Id", "Name"), "Select MemberShip Type", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Customer.MembershipTypeId)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Customer.BirthDate)
+        @Html.TextBoxFor(m => m.Customer.BirthDate, "{0: d MMM yyyy}", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Customer.BirthDate)
+    </div>
+    
+    <div class="checkbox">
+        <label>
+            @Html.CheckBoxFor(m => m.Customer.IsSuscribedToNewsLetter) Subscribed to Newsletter
+        </label>
+    </div>
+    @*@Html.HiddenFor(m => m.Customer.Id) adding a hidden field Requiring when updating DATA *@
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-primary">Submit</button>
+}
+
+
+@*Here we are putting enable client-side validation*@
+@section scripts
+    {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+
