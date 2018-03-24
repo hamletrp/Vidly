@@ -331,7 +331,6 @@
     <Compile Include="ViewModels\ExternalLoginConfirmationViewModel.cs" />
     <Compile Include="ViewModels\MovieFormViewModel.cs" />
     <Compile Include="ViewModels\RandomMovieViewModel.cs" />
-    <Compile Include="6e7956e368454d8d8f650aeacfc60718.jpg" />
     <Compile Include="Index.html" />
   </ItemGroup>
   <ItemGroup>
@@ -595,9 +594,13 @@
     <Content Include="Views\Movies\MovieForm.cshtml" />
     <Content Include="Views\Movies\ReadOnlyList.cshtml" />
     <Content Include="Views\Rentals\New.cshtml" />
+<<<<<<< HEAD
     <None Include="Web.Testing.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+=======
+    <Content Include="6e7956e368454d8d8f650aeacfc60718.jpg" />
+>>>>>>> removes compie include error
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
