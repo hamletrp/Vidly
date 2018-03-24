@@ -331,6 +331,8 @@
     <Compile Include="ViewModels\ExternalLoginConfirmationViewModel.cs" />
     <Compile Include="ViewModels\MovieFormViewModel.cs" />
     <Compile Include="ViewModels\RandomMovieViewModel.cs" />
+    <Compile Include="6e7956e368454d8d8f650aeacfc60718.jpg" />
+    <Compile Include="Index.html" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-Lumen.css" />
