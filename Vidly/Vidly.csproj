@@ -600,10 +600,14 @@
 =======
     <Content Include="6e7956e368454d8d8f650aeacfc60718.jpg" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> removes compie include error
 =======
     <Compile Include="Index.html" />
 >>>>>>> removes compie include error2
+=======
+    <Content Include="Index.html" />
+>>>>>>> removes compie include error6
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
