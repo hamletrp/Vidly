@@ -23,7 +23,7 @@ namespace Vidly.Controllers.Api
         // GET /Api/Customers
         public IHttpActionResult GetCustomers(string query = null)
         {
-            var customerQuery = _context.Customers
+           var customerQuery = _context.Customers
                 .Include(c => c.MembershipType);
 
             if (!String.IsNullOrWhiteSpace(query)) //Improving Typeahead

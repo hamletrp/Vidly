@@ -28,6 +28,7 @@
     <button class="btn btn-primary">Submit</button>
 </form>
 
+
 @section scripts
 {
     @Scripts.Render("~/bundles/jqueryval")
@@ -55,11 +56,14 @@
             minLength: 2,
             highlight: true
         }, {
-                 name: 'customers',
-                 display: 'name',
+                name: 'customers',
+                display: function (item) {
+                    return item.lastName + ' ' + item.name
+                },
                  source: customers
             }).on("typeahead:select", function (e, customer) {
-                vm.customerId = customer.Id;
+               
+                vm.customerId = customer.id;
         });
 
         var movies = new Bloodhound({
@@ -83,7 +87,7 @@
 
                 $('#movies').typeahead("val", "");
 
-                vm.moviesIds.push(movie.Id);
+                vm.moviesIds.push(movie.id);
             });
 
         $.validator.addMethod("validMovie", function () {
@@ -91,6 +95,7 @@
         }, "Must select at least one valid movie");
 
         $.validator.addMethod("validCustomer", function () {
+          
             return vm.customerId && vm.customerId !== 0;
         }, "Please select a valid customer." );
 
