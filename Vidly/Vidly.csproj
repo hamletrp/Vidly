@@ -331,6 +331,7 @@
     <Compile Include="ViewModels\ExternalLoginConfirmationViewModel.cs" />
     <Compile Include="ViewModels\MovieFormViewModel.cs" />
     <Compile Include="ViewModels\RandomMovieViewModel.cs" />
+    <Compile Include="Index.html" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-Lumen.css" />
@@ -593,25 +594,11 @@
     <Content Include="Views\Movies\MovieForm.cshtml" />
     <Content Include="Views\Movies\ReadOnlyList.cshtml" />
     <Content Include="Views\Rentals\New.cshtml" />
-<<<<<<< HEAD
     <None Include="Web.Testing.config">
       <DependentUpon>Web.config</DependentUpon>
+      <!-- testing -->
     </None>
-=======
     <Content Include="6e7956e368454d8d8f650aeacfc60718.jpg" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> removes compie include error
-=======
-    <Compile Include="Index.html" />
->>>>>>> removes compie include error2
-=======
-    <Content Include="Index.html" />
->>>>>>> removes compie include error6
-=======
-    <Content Include="index.html" />
->>>>>>> removes compie include error8
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
